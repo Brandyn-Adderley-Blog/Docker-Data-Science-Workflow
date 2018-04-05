@@ -13,6 +13,7 @@ Before you can use this, there is some prep work you will have to do:
 1. Create AWS Account
 2. Create IAM user/role that can access S3
 3. Create AMI Image.
+4. Store data in S3
 
 I will not go into detail on how to create an AWS Account, IAM role or launching an EC2 instance, but I will outline creating the AMI Image.
 
