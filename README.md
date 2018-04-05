@@ -6,6 +6,10 @@ This is a workflow I developed that allow me to spin up a more powerful machine 
 By using Docker and GIT/Github, I can easily transfer between my development computer and an instance in
 the cloud.
 
+Please note that there are two folders (NLP and General) that contains a Dockerfile and docker-compose file in each one.
+I included two different sets of files because there are some extra installation steps when using NLP that I found useful
+and did not want to include in every docker package. If you are not using NLP then just use the files from the General folder.
+
 ## Steps to Setup
 
 Before you can use this, there is some prep work you will have to do:
