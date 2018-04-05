@@ -47,4 +47,20 @@ Now when you need to launch a new instance, you can build off of this image whic
 11. Execute command "docker-compose up". Then docker will download the neccessary files and link to jupyter notebook will appear.
 12. Copy and paste the link into your browser and change "localhost" with the public IP address of the EC2 instance.
 
-Note: Any notebook created will be in a src folder. 
+Note: Any notebook created will be in a src folder.
+
+
+## Code to Access S3
+
+#### JSON
+
+client = boto3.client('s3')
+obj = client.get_object(Bucket='bucket_name', Key='file_name')
+json_data = obj['Body'].read().decode('utf-8')
+data = pd.read_json(json_data, lines=True)
+
+#### CSV
+
+s3 = boto3.client('s3')
+obj = s3.get_object(Bucket='bucket_name', Key='file_name')
+data = pd.read_csv(io.BytesIO(obj['Body'].read()))
