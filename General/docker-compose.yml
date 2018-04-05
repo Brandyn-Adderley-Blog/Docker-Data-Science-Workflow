@@ -1,0 +1,14 @@
+version : '2'
+
+services:
+    analytics:
+      build:
+        context: .
+      container_name: ${PROJECT_NAME}
+      ports:
+        - "7788:7788"
+      volumes:
+        - ./src:/home/ds
+      environment:
+        - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+        - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
