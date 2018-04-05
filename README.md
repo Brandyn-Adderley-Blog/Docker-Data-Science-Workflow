@@ -55,13 +55,13 @@ Note: Any notebook created will be in a src folder.
 
 #### JSON
 
-client = boto3.client('s3')
-obj = client.get_object(Bucket='bucket_name', Key='file_name')
-json_data = obj['Body'].read().decode('utf-8')
-data = pd.read_json(json_data, lines=True)
+client = boto3.client('s3') <br/><br/>
+obj = client.get_object(Bucket='bucket_name', Key='file_name') <br/><br/>
+json_data = obj['Body'].read().decode('utf-8') <br/><br/>
+data = pd.read_json(json_data, lines=True) <br/><br/>
 
 #### CSV
 
-s3 = boto3.client('s3')
-obj = s3.get_object(Bucket='bucket_name', Key='file_name')
-data = pd.read_csv(io.BytesIO(obj['Body'].read()))
+s3 = boto3.client('s3') <br/><br/>
+obj = s3.get_object(Bucket='bucket_name', Key='file_name') <br/><br/>
+data = pd.read_csv(io.BytesIO(obj['Body'].read())) <br/><br/>
