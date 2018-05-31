@@ -9,6 +9,7 @@ RUN adduser -D -S -h /home/ds -s /bin/ash ds
 #install neccessary packages
 RUN pip install jupyterlab boto3 imbalanced-learn
 RUN conda update conda
+RUN conda install -c conda-forge xgboost
 
 #Set Variables
 ENV HOME=/home/ds
